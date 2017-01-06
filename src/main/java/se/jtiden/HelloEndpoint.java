@@ -28,6 +28,12 @@ public class HelloEndpoint {
         private final int left;
         private final int right;
         private final long answer;
+
+        Result(int left, int right, long answer) {
+            this.left = left;
+            this.right = right;
+            this.answer = answer;
+        }
     }
 
     // SQL sample

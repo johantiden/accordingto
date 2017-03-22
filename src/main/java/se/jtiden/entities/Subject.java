@@ -1,4 +1,9 @@
 package se.jtiden.entities;
 
-public class Subject {
+import java.util.List;
+
+public interface Subject {
+
+    List<Statement> getStatements();
+
 }

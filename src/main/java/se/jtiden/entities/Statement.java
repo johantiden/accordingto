@@ -1,11 +1,13 @@
 package se.jtiden.entities;
 
-/**
- * Format:
- * {@link Subject} is/was x
- */
-public interface Statement {
+public interface Statement extends Editable<Statement> {
     Subject getSubject();
+
+    /**
+     * Format: {@link Subject} is/was x
+     * @return
+     */
     String getStatement();
+    Quote getQuote();
     double getTotalInterest();
 }

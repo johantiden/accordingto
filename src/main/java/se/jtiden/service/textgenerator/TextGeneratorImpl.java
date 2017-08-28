@@ -15,6 +15,13 @@ public class TextGeneratorImpl implements TextGenerator {
 
         List<Statement> statements = subject.getStatements();
 
+        List<Statement> relationAsStatements = subject.getRelations()
+                .stream()
+                .map(RelationToStatement::from)
+                .collect(Collectors.toList());
+
+        statements.addAll(relationAsStatements);
+
         Collections.sort(statements, Comparator.comparing(Statement::getTotalInterest).reversed());
 
         List<String> sentences = statements.stream().map(Statement::getStatement).collect(Collectors.toList());
